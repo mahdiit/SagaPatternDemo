@@ -18,9 +18,10 @@ public class BookingSaga : MassTransitStateMachine<BookingSagaData>
     {
         InstanceState(x => x.CurrentState);
 
-        Event(() => HotelBooked, e => e.CorrelateById(m => m.Message.TravelerId));
-        Event(() => FlightBooked, e => e.CorrelateById(m => m.Message.TravelerId));
-        Event(() => CarRented, e => e.CorrelateById(m => m.Message.TravelerId));
+        Event(() => HotelBooked, e => e.CorrelateById(m => m.Message.TravelerId).SelectId(x => x.Message.TravelerId));
+        Event(() => FlightBooked, e => e.CorrelateById(m => m.Message.TravelerId).SelectId(x => x.Message.TravelerId));
+        Event(() => CarRented, e => e.CorrelateById(m => m.Message.TravelerId).SelectId(x => x.Message.TravelerId));
+        Event(() => BookingCompleted, e => e.CorrelateById(m => m.Message.TravelerId).SelectId(x => x.Message.TravelerId));
 
         Initially(
             When(HotelBooked)
@@ -30,6 +31,8 @@ public class BookingSaga : MassTransitStateMachine<BookingSagaData>
                     context.Saga.HotelName = context.Message.HotelName;
                     context.Saga.FlightCode = context.Message.FlightCode;
                     context.Saga.CarPlateNumber = context.Message.CarPlateNumber;
+                    context.Saga.Email = context.Message.Email;
+                    context.Saga.HotelBooked = true;
                 })
                 .TransitionTo(FlightBooking)
                 .Publish(context => new BookFlight(context.Message.TravelerId, context.Message.Email, context.Message.FlightCode, context.Message.CarPlateNumber)));

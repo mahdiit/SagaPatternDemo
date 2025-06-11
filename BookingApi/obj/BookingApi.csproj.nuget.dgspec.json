@@ -1,37 +1,40 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi\\BookingApi.csproj": {}
+    "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi\\BookingApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Database\\BookingApi.Database.csproj": {
+    "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Database\\BookingApi.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Database\\BookingApi.Database.csproj",
+        "projectUniqueName": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Database\\BookingApi.Database.csproj",
         "projectName": "BookingApi.Database",
-        "projectPath": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Database\\BookingApi.Database.csproj",
-        "packagesPath": "C:\\Users\\Stefan Djokic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Database\\obj\\",
+        "projectPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Database\\BookingApi.Database.csproj",
+        "packagesPath": "C:\\Users\\Mehdi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Database\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Stefan Djokic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mehdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://essity-projects.pkgs.visualstudio.com/_packaging/EssityPackages/nuget/v3/index.json": {}
+          "https://nexus.khnm.ir/repository/nuget-group/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Saga\\BookingApi.Saga.csproj": {
-                "projectPath": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Saga\\BookingApi.Saga.csproj"
+              "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Saga\\BookingApi.Saga.csproj": {
+                "projectPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Saga\\BookingApi.Saga.csproj"
               }
             }
           }
@@ -40,23 +43,33 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
+            "MassTransit.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.4.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[9.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Relational": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[9.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[9.0.6, )"
             }
           },
           "imports": [
@@ -75,35 +88,108 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Saga\\BookingApi.Saga.csproj": {
+    "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Handlers\\BookingApi.Handlers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Saga\\BookingApi.Saga.csproj",
-        "projectName": "BookingApi.Saga",
-        "projectPath": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Saga\\BookingApi.Saga.csproj",
-        "packagesPath": "C:\\Users\\Stefan Djokic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Saga\\obj\\",
+        "projectUniqueName": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Handlers\\BookingApi.Handlers.csproj",
+        "projectName": "BookingApi.Handlers",
+        "projectPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Handlers\\BookingApi.Handlers.csproj",
+        "packagesPath": "C:\\Users\\Mehdi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Handlers\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Stefan Djokic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mehdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://essity-projects.pkgs.visualstudio.com/_packaging/EssityPackages/nuget/v3/index.json": {}
+          "https://nexus.khnm.ir/repository/nuget-group/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Database\\BookingApi.Database.csproj": {
+                "projectPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Database\\BookingApi.Database.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Saga\\BookingApi.Saga.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Saga\\BookingApi.Saga.csproj",
+        "projectName": "BookingApi.Saga",
+        "projectPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Saga\\BookingApi.Saga.csproj",
+        "packagesPath": "C:\\Users\\Mehdi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Saga\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Mehdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://nexus.khnm.ir/repository/nuget-group/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {}
           }
         },
@@ -111,15 +197,21 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "MassTransit": {
               "target": "Package",
-              "version": "[8.2.3, )"
+              "version": "[8.4.1, )"
             }
           },
           "imports": [
@@ -138,38 +230,47 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi\\BookingApi.csproj": {
+    "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi\\BookingApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi\\BookingApi.csproj",
+        "projectUniqueName": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi\\BookingApi.csproj",
         "projectName": "BookingApi",
-        "projectPath": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi\\BookingApi.csproj",
-        "packagesPath": "C:\\Users\\Stefan Djokic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi\\obj\\",
+        "projectPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi\\BookingApi.csproj",
+        "packagesPath": "C:\\Users\\Mehdi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Stefan Djokic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mehdi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net9.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://essity-projects.pkgs.visualstudio.com/_packaging/EssityPackages/nuget/v3/index.json": {}
+          "https://nexus.khnm.ir/repository/nuget-group/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net9.0": {
+            "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Database\\BookingApi.Database.csproj": {
-                "projectPath": "C:\\Users\\Stefan Djokic\\source\\repos\\BookingApi\\BookingApi.Database\\BookingApi.Database.csproj"
+              "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Database\\BookingApi.Database.csproj": {
+                "projectPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Database\\BookingApi.Database.csproj"
+              },
+              "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Handlers\\BookingApi.Handlers.csproj": {
+                "projectPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Handlers\\BookingApi.Handlers.csproj"
+              },
+              "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Saga\\BookingApi.Saga.csproj": {
+                "projectPath": "C:\\Users\\Mehdi\\source\\repos\\SagaSample\\BookingApi.Saga\\BookingApi.Saga.csproj"
               }
             }
           }
@@ -178,39 +279,45 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net9.0": {
+          "targetAlias": "net9.0",
           "dependencies": {
             "MassTransit.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.2.4-develop.1856, )"
+              "version": "[8.4.1, )"
             },
             "MassTransit.RabbitMQ": {
               "target": "Package",
-              "version": "[8.2.4-develop.1856, )"
+              "version": "[8.4.1, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[9.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[9.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.6, )"
+              "version": "[9.0.6, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[8.1.4, )"
             }
           },
           "imports": [
@@ -232,7 +339,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

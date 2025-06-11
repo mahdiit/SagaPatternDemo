@@ -11,7 +11,7 @@ public class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddDbContext<BookingDbContext>(options => 
+        builder.Services.AddDbContext<BookingDbContext>(options =>
                 options.UseSqlServer(builder.Configuration.GetConnectionString("BookingDb")));
 
         builder.Services.AddControllers();
@@ -22,14 +22,13 @@ public class Program
         {
             busConfigurator.SetKebabCaseEndpointNameFormatter();
 
-            busConfigurator.AddConsumers(typeof(Program).Assembly);
+            busConfigurator.AddConsumers(typeof(BookingApi.Handlers.BookFlightHandler).Assembly);
 
             busConfigurator.AddSagaStateMachine<BookingSaga, BookingSagaData>()
                 .EntityFrameworkRepository(r =>
                 {
+                    r.ConcurrencyMode = ConcurrencyMode.Optimistic;
                     r.ExistingDbContext<BookingDbContext>();
-
-                    r.UsePostgres();
                 });
 
             busConfigurator.UsingRabbitMq((context, cfg) =>

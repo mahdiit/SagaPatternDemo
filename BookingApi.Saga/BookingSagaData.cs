@@ -10,10 +10,12 @@ public class BookingSagaData : SagaStateMachineInstance
     public string Email { get; set; } = string.Empty;
     public string HotelName { get; set; } = string.Empty;
     public string FlightCode { get; set; } = string.Empty;
-    public string CarPlateNumber { get; set; } = string.Empty;  
- 
+    public string CarPlateNumber { get; set; } = string.Empty;
+
     public bool HotelBooked { get; set; }
     public bool FlightBooked { get; set; }
     public bool CarRented { get; set; }
     public bool BookingFinished { get; set; }
+
+    public int Version { get; set; } // required for EF saga concurrency
 }

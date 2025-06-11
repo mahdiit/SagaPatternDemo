@@ -4,7 +4,7 @@ using MassTransit;
 
 namespace BookingApi.Handlers;
 
-public class BookHotelHandler(BookingDbContext _dbContext) : IConsumer<BookHotel>
+public class BookHotelHandler(BookingDbContext dbContext) : IConsumer<BookHotel>
 {
     public async Task Consume(ConsumeContext<BookHotel> context)
     {
@@ -17,16 +17,17 @@ public class BookHotelHandler(BookingDbContext _dbContext) : IConsumer<BookHotel
             BookedOn = DateTime.Now
         };
 
-        _dbContext.Travelers.Add(traveler);
+        dbContext.Travelers.Add(traveler);
 
-        await _dbContext.SaveChangesAsync();
+        await dbContext.SaveChangesAsync();
 
         await context.Publish(new HotelBooked
         {
             TravelerId = traveler.Id,
             HotelName = context.Message.HotelName,
             FlightCode = context.Message.FlightCode,
-            CarPlateNumber = context.Message.CarPlateNumber
+            CarPlateNumber = context.Message.CarPlateNumber,
+            Email = context.Message.Email
         });
     }
 }
