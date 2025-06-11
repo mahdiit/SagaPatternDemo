@@ -5,3 +5,7 @@ public record BookHotel(string Email, string HotelName, string FlightCode, strin
 public record BookFlight(Guid TravelerId, string Email, string FlightCode, string CarPlateNumber);
 
 public record RentCar(Guid TravelerId, string Email, string CarPlateNumber);
+
+public record CancelHotelBooking(Guid TravelerId);
+
+public record CancelFlightBooking(Guid TravelerId);

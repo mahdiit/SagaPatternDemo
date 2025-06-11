@@ -1,6 +1,6 @@
 ﻿namespace BookingApi.Saga.Messages;
 
-public class HotelBooked
+public record HotelBooked
 {
     public Guid TravelerId { get; set; }
     public string Email { get; set; } = string.Empty;
@@ -9,7 +9,7 @@ public class HotelBooked
     public string CarPlateNumber { get; set; } = string.Empty;
 }
 
-public class FlightBooked
+public record FlightBooked
 {
     public Guid TravelerId { get; set; }
     public string Email { get; set; } = string.Empty;
@@ -17,15 +17,28 @@ public class FlightBooked
     public string CarPlateNumber { get; set; } = string.Empty;
 }
 
-public class CarRented
+public record FlightBookingFailed
+{
+    public Guid TravelerId { get; set; }
+    public string Reason { get; set; }
+};
+
+public record CarRented
 {
     public Guid TravelerId { get; set; }
     public string Email { get; set; } = string.Empty;
     public string CarPlateNumber { get; set; } = string.Empty;
 }
 
-public class BookingCompleted
+public record CarRentingFailed
+{
+    public Guid TravelerId { get; set; }
+    public string Reason { get; set; }
+};
+
+public record BookingCompleted
 {
     public Guid TravelerId { get; set; }
     public string Email { get; set; } = string.Empty;
 }
+

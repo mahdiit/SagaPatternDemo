@@ -9,11 +9,21 @@ public class BookFlightHandler() : IConsumer<BookFlight>
     {
         Console.WriteLine($"Booking flight number {context.Message.FlightCode} for traveler {context.Message.Email}");
 
-        await context.Publish(new FlightBooked
+        var rnd = new Random();
+        if (rnd.Next(100, 1000) % 3 == 0)
         {
-            TravelerId = context.Message.TravelerId,
-            FlightCode = context.Message.FlightCode,
-            CarPlateNumber = context.Message.CarPlateNumber
-        });
+            await context.Publish(new CancelFlightBooking(context.Message.TravelerId));
+        }
+        else
+        {
+            await context.Publish(new FlightBooked
+            {
+                TravelerId = context.Message.TravelerId,
+                FlightCode = context.Message.FlightCode,
+                CarPlateNumber = context.Message.CarPlateNumber
+            });
+        }
+
+
     }
 }
