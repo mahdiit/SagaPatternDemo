@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingApi.Saga", "BookingA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingApi.Handlers", "BookingApi.Handlers\BookingApi.Handlers.csproj", "{77680FF5-9679-44CA-99C0-16D8F74E56BD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingApi.IntegrationTest", "BookingApi.IntegrationTest\BookingApi.IntegrationTest.csproj", "{63BF5AD1-6A81-4D33-AC03-8C197459F81C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{77680FF5-9679-44CA-99C0-16D8F74E56BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77680FF5-9679-44CA-99C0-16D8F74E56BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77680FF5-9679-44CA-99C0-16D8F74E56BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63BF5AD1-6A81-4D33-AC03-8C197459F81C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63BF5AD1-6A81-4D33-AC03-8C197459F81C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63BF5AD1-6A81-4D33-AC03-8C197459F81C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63BF5AD1-6A81-4D33-AC03-8C197459F81C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
