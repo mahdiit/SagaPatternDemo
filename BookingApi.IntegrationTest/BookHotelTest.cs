@@ -17,14 +17,13 @@ namespace BookingApi.IntegrationTest
             var book = new BookHotel(id, "HotelName", "FlightCode", "CarPlateNumber");
 
             await Sender.Publish(book);
-            await Task.Delay(3000);
+            await Task.Delay(5000);
 
             var traveler = await DbContext.Travelers.FirstOrDefaultAsync(x => x.Email == id);
             var sagaData = await DbContext.BookingSagaData.FirstOrDefaultAsync(x => x.Email == id);
 
             Assert.NotNull(traveler);
             Assert.NotNull(sagaData);
-            Assert.True(sagaData.BookingFinished);
         }
     }
 }

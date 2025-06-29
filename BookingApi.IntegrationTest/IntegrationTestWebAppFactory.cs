@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.VisualStudio.TestPlatform.TestHost;
 using Testcontainers.MsSql;
 using Testcontainers.RabbitMq;
 
@@ -24,7 +23,7 @@ namespace BookingApi.IntegrationTest
         private readonly MsSqlContainer _msSqlContainer = new MsSqlBuilder()
             .WithImage("mcr.microsoft.com/mssql/server:2022-latest")
             .WithEnvironment("ACCEPT_EULA", "Y")
-            .WithEnvironment("MSSQL_PID", "Developer")
+            .WithEnvironment("MSSQL_PID", "Express")
             .WithPassword("123@Admin")
             .WithPortBinding(1433, true)
             .Build();
