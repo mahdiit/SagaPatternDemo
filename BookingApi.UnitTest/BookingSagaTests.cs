@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace BookingApi.SagaUnitTest
 {
-    public sealed class BookingSagaTests : IDisposable
+    public sealed class BookingSagaTests : IAsyncDisposable
     {
         private readonly ServiceProvider _provider;
         private readonly ITestHarness _harness;
@@ -60,9 +60,9 @@ namespace BookingApi.SagaUnitTest
             await _harness.Stop();
         }
 
-        public void Dispose()
+        public async ValueTask DisposeAsync()
         {
-            _provider?.Dispose();
+            await _provider.DisposeAsync();
         }
     }
 }

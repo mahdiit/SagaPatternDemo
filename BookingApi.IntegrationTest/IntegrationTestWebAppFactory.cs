@@ -1,4 +1,5 @@
 ﻿using BookingApi.Database;
+using DotNet.Testcontainers.Builders;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,7 @@ namespace BookingApi.IntegrationTest
             .WithPortBinding(5672, true)
             .WithUsername("guest")
             .WithPassword("guest")
+            .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(5672))
             .Build();
 
         private readonly MsSqlContainer _msSqlContainer = new MsSqlBuilder()
@@ -26,6 +28,7 @@ namespace BookingApi.IntegrationTest
             .WithEnvironment("MSSQL_PID", "Express")
             .WithPassword("123@Admin")
             .WithPortBinding(1433, true)
+            .WithWaitStrategy(Wait.ForUnixContainer().UntilPortIsAvailable(1433))
             .Build();
 
         public async Task InitializeAsync()
@@ -59,13 +62,12 @@ namespace BookingApi.IntegrationTest
         private string GetSqlConnection()
         {
             var port = _msSqlContainer.GetMappedPublicPort(1433);
-            return $"Database=BookingDb;Application Name=BookingApi;Integrated Security=false;Server=localhost,{port};User ID=sa;Password=123@Admin;TrustServerCertificate=True;";
+            return $"Database=BookingDb;Application Name=BookingApi;Integrated Security=false;Server={_msSqlContainer.Hostname},{port};User ID=sa;Password=123@Admin;TrustServerCertificate=True;";
         }
 
         private string GetRabbitmqConnection()
         {
-            var port = _rabbitMqContainer.GetMappedPublicPort(5672);
-            return $"rabbitmq://localhost:{port}";
+            return $"rabbitmq://{_rabbitMqContainer.Hostname}:{_rabbitMqContainer.GetMappedPublicPort(5672)}";
         }
 
         async Task IAsyncLifetime.DisposeAsync()
